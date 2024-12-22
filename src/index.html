@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var calendarEl = document.getElementById('calendar');
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        selectable: true
+      });
+      calendar.render();
+    });
+  </script>
+</head>
+<body>
+  <div id="to_do_list">
+    <div id="calender_page">
+      <div id="calendar"></div>
+    </div>
+    <div id="list_page">
+      <div id="list_container">
+        <div id="planContainer">
+          <div id="to_dos" class="plan">
+            <div class="title">
+              <span>To-dos</span>
+            </div>
+            <div class="plans">
+              <ul class="uncompleted tdl"></ul>
+              <ul class="completed tdl"></ul>
+            </div>
+            <button class="button1">+</button>
+          </div>
+          <div id="weekly_plans" class="plan">
+            <div class="title">
+              <span>Weekly plans</span>
+            </div>
+            <div class="plans">
+              <ul class="uncompleted"></ul>
+              <ul class="completed"></ul>
+            </div>
+            <button class="button1">+</button>
+          </div>
+          <div id="monthly_plans" class="plan">
+            <div class="title">
+              <span>Monthly plans</span>
+            </div>
+            <div class="plans">
+              <ul class="uncompleted"></ul>
+              <ul class="completed"></ul>
+            </div>
+            <button class="button1">+</button>
+          </div>
+          <div id="yearly_plans" class="plan">
+            <div class="title">
+              <span>Yearly plans</span>
+            </div>
+            <div class="plans">
+              <ul class="uncompleted"></ul>
+              <ul class="completed"></ul>
+            </div>
+            <button class="button1">+</button>
+          </div>
+        </div>
+        <div id="habits" class="plan">
+          <div class="title">
+            <span>Habits</span>
+          </div>
+          <div class="plans">
+            <ul class="uncompleted"></ul>
+            <ul class="completed"></ul>
+          </div>
+          <button class="button1">+</button>
+        </div>
+      </div>
+    </div>
+    <div id="modal_background">
+      <div id="todos_modal" class="modal">
+        <div class="modal_container">
+          <form action="">
+            <div class="modal_message">Add your to-do</div>
+            <input class="modal_input" type="text" placeholder="  Enter your To-do!">
+            <button id="todos_button2">Add</button>
+          </form>
+        </div>
+      </div>
+      <div id="weeklys_modal" class="modal">
+        <div class="modal_container">
+          <form action="">
+            <div class="modal_message">Add your Weekly Plan</div>
+            <input class="modal_input" type="text" placeholder="  Enter your Weekly Plan!">
+            <button id="weeklys_button2">Add</button>
+          </form>
+        </div>
+      </div>
+      <div id="monthlys_modal" class="modal">
+        <div class="modal_container">
+          <form action="">
+            <div class="modal_message">Add your Monthly Plan</div>
+            <input class="modal_input" type="text" placeholder="  Enter your Monthly Plan!">
+            <button id="monthlys_button2">Add</button>
+          </form>
+        </div>
+      </div>
+      <div id="yearlys_modal" class="modal">
+        <div class="modal_container">
+          <form action="">
+            <div class="modal_message">Add your Yearly Plan</div>
+            <input class="modal_input" type="text" placeholder="  Enter your Yearly Plan!">
+            <button id="yearlys_button2">Add</button>
+          </form>
+        </div>
+      </div>
+      <div id="habits_modal" class="modal">
+        <div class="modal_container">
+          <form action="">
+            <div class="habit_name">
+              <div class="modal_message">Add your Habit</div>
+              <input class="modal_input" type="text" placeholder="  Enter your Habit!">
+            </div>
+            <div class="habit_repeat">
+              <div class="repeat_title">
+                Every
+              </div>
+              <div class="day_of_the_week">
+                <div class="weekday"><input type="checkbox" id="Mon"><label for="Mon"> Monday</label></div>
+                <div class="weekday"><input type="checkbox" id="Tue"><label for="Tue"> Tuesday</label></div>
+                <div class="weekday"><input type="checkbox" id="Wed"><label for="Wed"> Wednesday</label></div>
+                <div class="weekday"><input type="checkbox" id="Thu"><label for="Thu"> Thursday</label></div>
+                <div class="weekday"><input type="checkbox" id="Fri"><label for="Fri"> Friday</label></div>
+                <div class="weekday"><input type="checkbox" id="Sat"><label for="Sat"> Saturday</label></div>
+                <div class="weekday"><input type="checkbox" id="Sun"><label for="Sun"> Sunday</label></div>
+              </div>
+              <section class="day_week_month">
+                <div class="day period">
+                  <input type="checkbox">
+                  <select name="day" id="day-select">
+                    <option value="1day">1 day</option>
+                    <option value="2day">2 days</option>
+                    <option value="3day">3 days</option>
+                    <option value="4day">4 days</option>
+                    <option value="5day">5 days</option>
+                    <option value="6day">6 days</option>
+                  </select>
+                </div>
+                <div class="week period">
+                  <input type="checkbox">
+                  <select name="week" id="week-select">
+                    <option value="1week">1 week</option>
+                    <option value="2week">2 weeks</option>
+                    <option value="3week">3 weeks</option>
+                    <option value="4week">4 weeks</option>
+                  </select>
+                </div>
+                <div class="month period">
+                  <input type="checkbox">
+                  <select name="month" id="month-select">
+                    <option value="1month">1 month</option>
+                    <option value="2month">2 months</option>
+                    <option value="3month">3 months</option>
+                    <option value="4month">4 months</option>
+                    <option value="5month">5 months</option>
+                    <option value="6month">6 months</option>
+                  </select>
+                </div>
+              </section>
+            </div>
+            <button id="habits_button2">Add</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../dist/bundle.js"></script>
+</body>
+</html>

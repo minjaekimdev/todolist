@@ -1,0 +1,346 @@
+/* all */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+
+/* font */
+@font-face {
+  font-family: 'Freesentation-7Bold';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Freesentation-5Medium';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-5Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+* {
+  font-family: 'Freesentation-5Medium';
+}
+
+/* calendar style */
+.fc-scrollgrid {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.fc-daygrid-day {
+  background-color: #fff;
+}
+
+.fc-daygrid-day:hover {
+  cursor: pointer;
+}
+
+.fc-col-header-cell {
+  font-size: 16px;
+  color: #969696;
+  background-color: #fff;
+}
+
+.fc-daygrid-day-top {
+  color: #969696;
+}
+
+
+/* todolist style */
+#to_do_list {
+  height: 100vh;
+  display: flex;
+  position: relative;
+}
+
+#calender_page {
+  width: 50%;
+  background-color: #5BC0D0;
+}
+
+#list_page {
+  width: 50%;
+  background-color: #5BC0D0;
+}
+
+#list_container {
+  width: calc(100% - 40px);
+  height: calc(100vh - 40px);
+  margin: 20px;
+  background-color: white;
+  border: 1px solid #CED4DA;
+  border-radius: 10px;
+}
+
+.plan {
+  position: relative;
+}
+
+.plans {
+  height: calc(100% - 35px);
+  overflow-y: auto;
+}
+
+.title {
+  height: 35px;
+  border-bottom: 1px solid #CED4DA;
+  overflow: hidden;
+  align-content: center;
+}
+
+.title>span {
+  font-family: 'Freesentation-7Bold';
+  margin-left: 15px;
+  color: #6C757D
+}
+
+.button1 {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background-color: #5BC0D0;
+  opacity: 50%;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+/* 계획 목록 */
+.plan_list {
+  height: 35px;
+  align-content: center;
+  list-style: none;
+}
+
+.plan_list:hover {
+  background-color: #F8F9FA;
+  cursor: pointer;
+}
+
+.plan_list:hover .plan_name {
+  color: #54595E;
+}
+
+.plan_container {
+  margin-left: 10px;
+}
+
+.plan_checkbox {
+  width: 13px;
+  height: 13px;
+  border: 2px solid #CED4DA;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.complete .plan_checkbox {
+  background-color: #17A2B8;
+  position: relative;
+}
+
+.complete .plan_checkbox::after {
+  content: '';
+  width: 2px;
+  height: 4px;
+  display: block;
+  transform: translate(3px, -4px) rotate(45deg);
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+  position: absolute;
+}
+
+.plan_name {
+  margin-left: 8px;
+  color: #6C757D;
+  font-size: 14px;
+}
+
+.complete .plan_name {
+  text-decoration: line-through;
+}
+
+.tdl .plan_list {
+  height: 45px;
+}
+
+.tdl .plan_container {
+  margin-left: 20px;
+}
+
+
+.tdl .plan_name {
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.tdl .plan_checkbox {
+  width: 15px;
+  height: 15px;
+}
+
+.tdl .complete .plan_checkbox::after {
+  width: 3px;
+  height: 6px;
+  transform: translate(4px, -5px) rotate(45deg);
+}
+
+
+
+
+/* 계획 목록 */
+#planContainer {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+
+#to_dos {
+  width: 66.6666%;
+  height: 100%;
+  border-right: 1px solid #CED4DA;
+  border-bottom: 1px solid #CED4DA;
+}
+
+#to_dos .button1 {
+  width: 60px;
+  height: 60px;
+  font-size: 3rem;
+}
+
+#weekly_plans {
+  width: 33.3333%;
+  height: 33.3333%;
+  border-bottom: 1px solid #CED4DA;
+}
+
+#monthly_plans {
+  width: 33.3333%;
+  height: 33.3333%;
+  border-bottom: 1px solid #CED4DA;
+}
+
+#yearly_plans {
+  width: 33.3333%;
+  height: 33.3333%;
+  border-bottom: 1px solid #CED4DA;
+}
+
+#habits {
+  height: 20%;
+}
+
+#habits .title {
+  width: 100%;
+  height: 35px;
+  border-bottom: 1px solid #CED4DA;
+}
+
+
+
+#habits .button1 {
+  width: 40px;
+  height: 40px;
+  font-size: 2rem;
+}
+
+/* modal design */
+#modal_background {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+}
+
+.modal {
+  width: 500px;
+  border-radius: 10px;
+  background-color: #fff;
+  display: none;
+  /* +버튼 클릭 시 flex로 변경 */
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.modal .modal_container {
+  width: 450px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.modal .modal_container .modal_message {
+  font-size: 24px;
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+
+.modal .modal_container form input[type="text"] {
+  width: 447px;
+  height: 64px;
+  border: 1px solid #BFC4D7;
+  border-radius: 10px;
+}
+
+.modal .modal_container form input::placeholder {
+  font-size: 1rem;
+  color: #ABADB5;
+}
+
+.modal .modal_container form button {
+  width: 100px;
+  height: 47px;
+  background-color: #5BC0D0;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  display: block;
+  margin-top: 20px;
+  margin-left: 350px;
+}
+
+
+
+#habits_modal .habit_repeat {
+  margin-top: 20px;
+}
+
+#habits_modal .habit_repeat>.repeat_title {
+  font-size: 20px;
+}
+
+#habits_modal .habit_repeat>.day_of_the_week {
+  margin-top: 10px;
+}
+
+#habits_modal .habit_repeat>.day_of_the_week>.weekday {
+  white-space: pre;
+  display: inline-block;
+  width: 32%;
+}
+
+#habits_modal .habit_repeat>.day_week_month {
+  margin-top: 20px;
+}
+
+#habits_modal .habit_repeat>.day_week_month>.period {
+  display: inline-block;
+  margin-right: 60px;
+}
